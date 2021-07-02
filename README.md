@@ -21,5 +21,4 @@ For this data cleaning project, we are working with a sample of the database '20
 - Matplotlib and Seaborn for data visualization
 
 
-
-![gettowork](https://pplinsights.com/wp-content/uploads/2020/02/Lets-get-to-work.jpg)
+<img src="https://pplinsights.com/wp-content/uploads/2020/02/Lets-get-to-work.jpg)" width="100" height="100">
