@@ -4,6 +4,7 @@
 ## Mission objectives
 
 Clean properly a dataset for machine learning process.
+Final clean csv file: nyc_trees_clean
 
 ## Tools used
 
