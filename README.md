@@ -8,17 +8,60 @@ Can you help them clean the data so that they can begin to raise awareness to ec
 
 ## Mission objectives
 
-- Clean the data set (check for input errors, spelling mistakes, ...)
+- Clean the data set (check for input errors, inconsistency, spelling mistakes, ...)
 - Prepare the data for machine learning
-
-## Database
-
-For this data cleaning project, we are working with a sample of the database '2015 Street Tree Census - Tree Data' provided by the Department of Parks and Recreation (DPR). The original database has information about 684k trees. In our sample, we have 100k trees (14,62%). The original database can be accessed here: https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh
 
 ## Tools used
 
 - Pandas
 - Matplotlib and Seaborn for data visualization
 
+## Database
 
-<img src="https://pplinsights.com/wp-content/uploads/2020/02/Lets-get-to-work.jpg)" width="50" height="50">
+For this data cleaning project, we are working with a sample of the database '2015 Street Tree Census - Tree Data' provided by the Department of Parks and Recreation (DPR). The original database has information about 684k trees. In our sample, we have 100k trees (14,62%). The original database can be accessed here: https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh
+
+In our sample (data_100000.csv), we find 100k rows representing 100k trees.
+We also find 42 columns, containing information such as the type of tree or its zip code. All are not related to the trees themselves so we'll do some cleaning and only keep the relevant ones. Some information is also redundant, so we'll get rid of them. The idea is to keep unique information so the data is well cleaned to create a machine learning model.
+
+
+## Cleaning
+### NaN-values
+We have 4992 rows with some missing values for the columns 'health', 'spc_latin', 'spc_common', 'steward', 'guards', 'problems' and 'sidewalk'. We might me tempted to delete those rows with NaN values but actually those rows belong to either a 'stump' or 'dead' tree. Thus, it makes sense that they don't have any values for those columns. We should keep them.
+Apart from that, only 1 row has the 'health' variable missing.
+
+### Information not directly related to the tree characteristics which we'll not keep:
+- 'created_at'
+- 'tree_id'
+- 'block_id'
+- 'spc_latin'
+- 'steward'
+- 'guards'
+- 'user_type'
+- 'problems'
+
+### Redudant location information about the trees, which we'll not keep:
+-'the_geom'
+- 'state'
+- 'zip_city'
+- 'x_sp'
+- 'y_sp'
+- 'address'
+- 'borocode'
+- 'boroname'
+- 'boro_ct'
+- 'cb_num'
+- 'st_assem'
+- 'st_senate'
+- 'nta'
+- 'nta_name'
+- 'cncldist'
+
+### Let's change the name of some columns so it's clearer to understand what information they contain:
+- 'brnch_othe' -> 'branch_other'
+- 'brnch_shoe' -> 'branch_shoe'
+- 'brnch_ligh' -> 'branch_light'
+- 'trnk_wire' -> 'trunk_wire'
+- 'trnk_light' -> 'trunk_light'
+- 'trnk_other' -> 'trunk_other'
+
+### Let's make the name of the trees ('spc_common') similarly written: capitalized and replace ("-" -> " ")
