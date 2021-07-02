@@ -46,13 +46,11 @@ Apart from that, only 1 row has the 'health' variable missing.
 - 'x_sp'
 - 'y_sp'
 - 'address'
-- 'borocode'
 - 'boroname'
 - 'boro_ct'
 - 'cb_num'
 - 'st_assem'
 - 'st_senate'
-- 'nta'
 - 'nta_name'
 - 'cncldist'
 
@@ -64,6 +62,6 @@ Apart from that, only 1 row has the 'health' variable missing.
 - 'trnk_light' -> 'trunk_light'
 - 'trnk_other' -> 'trunk_other'
 
-### Let's make the name of the trees ('spc_common') similarly written: capitalized and replace ("-" -> " ")
+### Let's make the name of the trees ('spc_common') similarly written: capitalized and replace "-" by " ".
 
-### Change sidewalk to 'Yes' or 'No'
+### Change sidewalk(damage) to 'Yes' or 'No'
