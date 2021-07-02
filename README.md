@@ -22,4 +22,4 @@ For this data cleaning project, we are working with a sample of the database '20
 
 
 
-https://pplinsights.com/wp-content/uploads/2020/02/Lets-get-to-work.jpg
+![gettowork](https://pplinsights.com/wp-content/uploads/2020/02/Lets-get-to-work.jpg)
